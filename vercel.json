@@ -7,15 +7,5 @@
   "rewrites": [
     { "source": "/slack/events", "destination": "/api/index" },
     { "source": "/cron/:path*", "destination": "/api/index" }
-  ],
-  "crons": [
-    {
-      "path": "/cron/check-changes",
-      "schedule": "*/5 * * * *"
-    },
-    {
-      "path": "/cron/weekly-digest",
-      "schedule": "0 5 * * 1"
-    }
   ]
 }
