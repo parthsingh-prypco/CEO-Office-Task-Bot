@@ -37,7 +37,7 @@ CRON_SECRET          = os.environ.get("CRON_SECRET", "")
 
 # ─── App setup ────────────────────────────────────────────────────────────────
 
-bolt_app = App(token=SLACK_BOT_TOKEN, signing_secret=SLACK_SIGNING_SECRET)
+bolt_app = App(token=SLACK_BOT_TOKEN, signing_secret=SLACK_SIGNING_SECRET, process_before_response=True)
 flask_app = Flask(__name__)
 handler = SlackRequestHandler(bolt_app)
 
