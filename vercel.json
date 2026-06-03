@@ -1,15 +1,12 @@
 {
-  "builds": [
-    { "src": "api/index.py", "use": "@vercel/python" }
-  ],
   "functions": {
     "api/index.py": {
       "maxDuration": 10
     }
   },
-  "routes": [
-    { "src": "/slack/events", "dest": "/api/index.py" },
-    { "src": "/cron/(.*)",    "dest": "/api/index.py" }
+  "rewrites": [
+    { "source": "/slack/events", "destination": "/api/index" },
+    { "source": "/cron/:path*", "destination": "/api/index" }
   ],
   "crons": [
     {
