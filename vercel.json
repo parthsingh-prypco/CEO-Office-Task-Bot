@@ -1,0 +1,19 @@
+{
+  "builds": [
+    { "src": "api/index.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/slack/events", "dest": "/api/index.py" },
+    { "src": "/cron/(.*)",    "dest": "/api/index.py" }
+  ],
+  "crons": [
+    {
+      "path": "/cron/check-changes",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/cron/weekly-digest",
+      "schedule": "0 5 * * 1"
+    }
+  ]
+}

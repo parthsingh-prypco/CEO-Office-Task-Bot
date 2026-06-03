@@ -1,0 +1,61 @@
+{
+  "display_information": {
+    "name": "CEO Office Bot",
+    "description": "Project Tracker bot for CEO Office",
+    "background_color": "#1a1a2e"
+  },
+  "features": {
+    "bot_user": {
+      "display_name": "CEO Office Bot",
+      "always_online": false
+    },
+    "slash_commands": [
+      {
+        "command": "/add-task",
+        "url": "https://YOUR-APP.vercel.app/slack/events",
+        "description": "Add a task to the Project Tracker",
+        "usage_hint": "Task name | YYYY-MM-DD | @owner | Priority | Track",
+        "should_escape": false
+      },
+      {
+        "command": "/due-this-week",
+        "url": "https://YOUR-APP.vercel.app/slack/events",
+        "description": "Show tasks due this week",
+        "should_escape": false
+      },
+      {
+        "command": "/task-list",
+        "url": "https://YOUR-APP.vercel.app/slack/events",
+        "description": "List tasks (optional: status:In Progress / track:Commercial / priority:High)",
+        "should_escape": false
+      },
+      {
+        "command": "/update-task",
+        "url": "https://YOUR-APP.vercel.app/slack/events",
+        "description": "Update a task field",
+        "usage_hint": "Task name | field | new value",
+        "should_escape": false
+      }
+    ]
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "commands",
+        "lists:read",
+        "lists:write",
+        "chat:write",
+        "users:read",
+        "users:read.email"
+      ]
+    }
+  },
+  "settings": {
+    "interactivity": {
+      "is_enabled": false
+    },
+    "org_deploy_enabled": false,
+    "socket_mode_enabled": false,
+    "token_rotation_enabled": false
+  }
+}
