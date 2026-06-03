@@ -51,10 +51,10 @@ redis = Redis(
 
 COL_TITLE    = "Title"
 COL_STATUS   = "Status"     # e.g. "Not Started", "In Progress", "Done"
-COL_DUE      = "Due Date"
-COL_OWNER    = "Owner"
+COL_DUE      = "Due date"
+COL_OWNER    = "Assignee"
 COL_PRIORITY = "Priority"   # e.g. "High", "Medium", "Low"
-COL_TRACK    = "Track"      # e.g. "Commercial", "Strategy"
+COL_TRACK    = "Project"      # e.g. "Commercial", "Strategy"
 
 # ─── Lists API helpers ────────────────────────────────────────────────────────
 
